@@ -1,5 +1,7 @@
 import { db } from "../databases/mongodb.js";
 
+
+
 export async function getProducts(req, res) {
   try {
     const products = await db.collection("products").find().toArray();
@@ -13,6 +15,7 @@ export async function getProducts(req, res) {
 export async function registerProduct(req, res) {
   const newProduct = req.body;
 
-  await db.collection('products').insertOne({newProduct});
+  await db.collection('products').insertOne(newProduct);
   res.status(201).send('Produto registrado com sucesso!');
 }
+
