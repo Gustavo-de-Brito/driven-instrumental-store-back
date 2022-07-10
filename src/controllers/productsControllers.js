@@ -9,3 +9,10 @@ export async function getProducts(req, res) {
     res.sendStatus(500);
   }
 }
+
+export async function registerProduct(req, res) {
+  const newProduct = req.body;
+
+  await db.collection('products').insertOne({newProduct});
+  res.status(201).send('Produto registrado com sucesso!');
+}
