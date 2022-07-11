@@ -73,8 +73,7 @@ export async function getCartProducts(req, res){
   cartProducts.forEach(function(item){
     cartProductsIds.push(item._id);
   });
-
-  //const cartProducts = ["62cb3ecef34d66b1eb098bd9", "62cb3ff0f34d66b1eb098bdb"];
+  
   var cartProductsObjectId = [];
   cartProductsIds.forEach(function(item){ 
     cartProductsObjectId.push(new objectId(item));
